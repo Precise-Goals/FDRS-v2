@@ -1600,4 +1600,20 @@ button.btn-connect {
 nav.navbar {
   padding: 1.25% 13%;
 }
+nav.navbar {
+    padding: 1.25% 13%;
+    background: black;
+}
 
+.logo-heart, .logo-text {
+    color: white;
+}
+
+.navbar-links a {
+    color: white;
+}
+
+button.btn-connect {
+    color: black;
+    background: white;
+}
