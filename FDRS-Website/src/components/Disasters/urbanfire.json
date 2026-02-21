@@ -1,0 +1,119 @@
+{
+  "assessment": {
+    "Additional Numerical Metrics": {
+      "Area affected (km²)": "7-12 km²",
+      "Critical infrastructure damaged": "Major railway/road corridor, numerous local roads, power distribution networks, water supply lines, and communication infrastructure within the fire zone are severely damaged or destroyed.",
+      "Estimated displaced persons": "300,000 - 700,000",
+      "Water/power outage percentage": "80-100% in the directly affected zone, with significant cascading outages in surrounding areas."
+    },
+    "Building Destruction Percentage": "30-40% of all visible buildings in the entire image frame are either actively burning, destroyed, or within the immediate high-impact zone. For the directly affected areas, this percentage is likely 80-100%.",
+    "Damage Severity Category": "Catastrophic",
+    "Damage Severity Score": 92,
+    "Disaster Intensity Rating": 9,
+    "Disaster Type Identified": "Wildfire (Urban Conflagration)",
+    "Disaster-Specific Impact": {
+      "Describe specific disaster indicators visible": "The most prominent indicators are widespread, intense orange flames consuming urban structures, accompanied by massive plumes of dense black smoke. The fire exhibits a clear linear propagation pattern, suggesting rapid spread along a specific corridor, possibly exacerbated by wind or highly flammable structures/materials.",
+      "Quantify the extent of disaster-specific damage": "The fire front extends for several kilometers along the central transportation axis, with a width varying from hundreds of meters to over a kilometer in some sections. The total area engulfed in active flames and heavy smoke is estimated to be between 7-12 km²."
+    },
+    "Economic Impact Estimate": {
+      "Estimated infrastructure damage cost": "Billions of USD (Roads, railways, power grids, water systems, communication networks, public buildings).",
+      "Impact category": "Catastrophic",
+      "Property losses estimate": "Tens of billions of USD (Residential, commercial, and potentially industrial buildings and their contents).",
+      "Total economic impact range": "$20 billion - $100 billion+ (Considering direct damage, business interruption, long-term recovery, and environmental costs)."
+    },
+    "Emergency Response Recommendations": {
+      "Evacuation recommendations": "Mandatory evacuation for all areas within a 1-2 km radius of active fire fronts and areas directly impacted by heavy smoke. Voluntary evacuation for broader downwind areas.",
+      "Immediate actions needed": [
+        "Massive Firefighting Operations: Deploy all available ground and aerial firefighting assets to contain and extinguish the widespread fires, prioritizing areas to prevent further spread.",
+        "Search and Rescue (SAR): Immediately deploy specialized SAR teams to locate and extract trapped individuals from burning or collapsed structures.",
+        "Medical Response: Establish multiple field hospitals and triage centers, mobilize all available ambulances and medical personnel to treat burn victims, smoke inhalation, and other injuries.",
+        "Large-scale Evacuation: Implement mandatory, large-scale evacuation of residents from all areas within and immediately adjacent to the fire zone, and voluntary evacuation for areas downwind of heavy smoke plumes.",
+        "Traffic Management: Secure and manage all access routes for emergency vehicles, diverting non-essential traffic to ensure rapid response."
+      ],
+      "Required emergency services": "Fire services, medical emergency teams, urban search and rescue, police/security forces, hazmat teams, civil defense, and engineering/structural assessment teams."
+    },
+    "Estimated Affected Population": {
+      "Based on visible destruction and area density": "Given the high density of urban development in the affected zone, an estimated 300,000 - 700,000 people could be directly impacted or displaced.",
+      "Risk categories": {
+        "Displaced": "Hundreds of thousands (High risk)",
+        "Injured": "Tens of thousands (High risk)",
+        "Trapped": "Thousands (High risk)"
+      }
+    },
+    "Estimated Casualties": {
+      "Confidence level": "Medium (Satellite imagery provides extent, but not precise population density, time of day, or building occupancy at the time of disaster)",
+      "Potential fatalities estimate": "2,000 - 10,000+ (Due to the rapid spread, intensity of the urban fire, and high population density)",
+      "Potential injured estimate": "20,000 - 100,000+ (Severe burns, smoke inhalation, trauma from collapse)"
+    },
+    "Infrastructure Damage Assessment": {
+      "Bridges/Overpasses": "The primary linear transportation corridor, which includes sections that appear elevated or bridged, is directly engulfed in flames in multiple locations. This indicates severe damage to railway tracks, road surfaces, and potentially the structural integrity of any overpasses or bridges along this critical route.",
+      "Buildings": "Hundreds, if not thousands, of buildings within the extensive fire zone are completely destroyed, reduced to rubble, or severely compromised by the intense heat and flames. The dense housing clusters adjacent to the linear corridor are particularly devastated. Only structures well outside the immediate fire perimeter appear intact.",
+      "Other infrastructure": "Essential services infrastructure such as power lines, communication cables, water pipelines, and sewage systems running through the affected areas are almost certainly destroyed or rendered inoperable. Power substations or water pumping stations located within the burn zone would be completely lost.",
+      "Roads": "Roads within the active fire zone are completely impassable due to flames, debris, and potential structural collapse. Asphalt and concrete surfaces are likely severely damaged by extreme heat. Surrounding roads are also likely blocked by emergency operations, smoke, and potential evacuation traffic, severely hindering access."
+    },
+    "Recovery Timeline Estimate": {
+      "Long-term (3+ months)": "Large-scale reconstruction of infrastructure and housing, urban planning for rebuilding, economic recovery efforts, and psychosocial support for affected communities. This phase will likely extend for several years.",
+      "Medium-term (1-3 months)": "Extensive debris clearance, restoration of critical services (power, water) to unaffected areas, detailed structural assessments, provision of temporary housing solutions, and initial planning for reconstruction.",
+      "Short-term (0-7 days)": "Immediate emergency response, firefighting, search and rescue, medical aid, initial damage assessment, establishment of temporary shelters and aid distribution points."
+    },
+    "Road Accessibility Status": {
+      "Comparison of road network before/after": "The 'BEFORE' image shows a well-developed and interconnected urban road network. The 'AFTER' image shows this network largely obliterated or rendered unusable within the fire-affected areas, creating significant barriers for movement and emergency services.",
+      "Critical access routes affected": "The major diagonal transportation corridor (railway/road) is a critical regional artery now severely impacted. Numerous local streets essential for community access and emergency response are completely blocked.",
+      "Percentage of roads blocked or destroyed": "An estimated 50-70% of the local road network within the directly affected burn zone is impassable or destroyed. The main linear transportation corridor is also severely compromised along its length within the fire zone."
+    },
+    "Secondary Disaster Risks": [
+      {
+        "Risk": "Further spread of fire",
+        "Risk Level": "High"
+      },
+      {
+        "Risk": "Structural collapse of fire-damaged buildings",
+        "Risk Level": "High"
+      },
+      {
+        "Risk": "Severe air quality degradation from smoke",
+        "Risk Level": "High"
+      },
+      {
+        "Risk": "Hazardous material release (from burning structures/vehicles)",
+        "Risk Level": "Medium"
+      },
+      {
+        "Risk": "Prolonged disruption of essential services (power, water, communication)",
+        "Risk Level": "High"
+      }
+    ],
+    "Structural Dissimilarity Index": 88,
+    "Textual Description of Damage": "The 'AFTER' image reveals a catastrophic urban conflagration. A massive fire has erupted and spread extensively, primarily along a prominent linear transportation corridor (likely a railway line or a major road with a central median) that traverses the area diagonally from top-left to bottom-right. From this central axis, intense flames have radiated outwards, engulfing densely packed residential and commercial structures on both sides. The fire front is characterized by bright orange flames, indicating active and widespread burning of buildings and infrastructure. Dense, black smoke plumes rise high into the atmosphere, obscuring significant portions of the urban landscape, particularly to the north and east of the main fire line. Many buildings within the fire's direct path appear completely destroyed or are actively burning, suggesting widespread structural collapse and incineration. The visual indicators of the disaster are overwhelming, demonstrating a rapid and devastating spread of fire through a highly populated urban environment.",
+    "Vegetation Loss Percentage": "20-30% of visible green spaces and urban vegetation within the overall image are either burned or severely damaged by fire and smoke.",
+    "metadata": {
+      "after_image_path": "./Urbanfire.png",
+      "analysis_timestamp": "2026-02-21T18:46:51.041036",
+      "analysis_type": "comparative",
+      "before_image_path": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184623.png",
+      "model_used": "models/gemini-2.5-flash"
+    }
+  },
+  "disaster_type": "urbanfire",
+  "metadata": {
+    "disaster_image": "./Urbanfire.png",
+    "input": {
+      "distance_meters": 250,
+      "latitude": 18.6481533,
+      "longitude": 73.7630233
+    },
+    "polygon": {
+      "center": [73.7630233, 18.6481533],
+      "coordinates": [
+        [73.760653085846, 18.6459075220625],
+        [73.760653085846, 18.6503990779375],
+        [73.765393514154, 18.6503990779375],
+        [73.765393514154, 18.6459075220625],
+        [73.760653085846, 18.6459075220625]
+      ]
+    },
+    "satellite_image": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184623.png",
+    "timestamp": "2026-02-21T18:46:23.194061"
+  },
+  "status": "success"
+}

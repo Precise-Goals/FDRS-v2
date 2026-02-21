@@ -1,0 +1,138 @@
+{
+  "assessment": {
+    "Additional Numerical Metrics": {
+      "Area affected (km²)": "The visible area is approximately 10-15 km², but the full impact zone of the cyclone would be much larger, potentially hundreds of square kilometers directly affected by severe winds and flooding.",
+      "Critical infrastructure damaged": "100% (all critical infrastructure within the direct impact zone is severely damaged or non-functional)",
+      "Estimated displaced persons": "500,000 - 2,000,000",
+      "Water/power outage percentage": "95-100% in the directly affected urban area"
+    },
+    "Building Destruction Percentage": "60%",
+    "Damage Severity Category": "Catastrophic",
+    "Damage Severity Score": 95,
+    "Disaster Intensity Rating": 10,
+    "Disaster Type Identified": "Cyclone (Hurricane/Typhoon) with severe flooding and potential storm surge",
+    "Disaster-Specific Impact": {
+      "Describe specific disaster indicators visible in the images": "The most prominent indicator is the well-defined eye of a cyclonic storm, directly centered over the urban area. Spiral cloud bands extend outwards, covering the entire visible region. Extensive brown, turbid floodwaters are clearly visible, particularly on the eastern side, indicating heavy rainfall and potentially storm surge. The general muted and waterlogged appearance of the ground, where visible, further confirms the severe impact of the cyclone.",
+      "Quantify the extent of disaster-specific damage": "The cyclone's eye directly impacting a dense urban center signifies the highest possible level of wind and rain damage. The widespread flooding covers a significant portion of the visible land area, indicating massive inundation. The entire visible urban expanse is under direct and catastrophic impact from the storm."
+    },
+    "Economic Impact Estimate": {
+      "Estimated infrastructure damage cost": "Billions of USD (roads, railways, power grids, water systems, public buildings)",
+      "Impact category": "Catastrophic",
+      "Property losses estimate": "Tens of billions of USD (residential, commercial, industrial properties)",
+      "Total economic impact range": "Tens of billions to over a hundred billion USD"
+    },
+    "Emergency Response Recommendations": [
+      {
+        "Action": "Immediate aerial (helicopter/drone) search and rescue operations to locate and extract trapped individuals from rooftops and flooded areas.",
+        "Priority": "Highest"
+      },
+      {
+        "Action": "Deployment of waterborne rescue teams (boats, amphibious vehicles) to access flooded areas for search and rescue and initial aid delivery.",
+        "Priority": "Highest"
+      },
+      {
+        "Action": "Establishment of emergency medical facilities and mobile clinics for treating injuries and preventing disease outbreaks.",
+        "Priority": "High"
+      },
+      {
+        "Action": "Provision of clean drinking water, food, and temporary shelter to displaced populations.",
+        "Priority": "High"
+      },
+      {
+        "Action": "Rapid damage assessment using aerial imagery and ground teams (once safe) to identify critical infrastructure failures and prioritize recovery efforts.",
+        "Priority": "Medium"
+      },
+      {
+        "Action": "Restoration of critical communication lines to facilitate coordination and information dissemination.",
+        "Priority": "Medium"
+      }
+    ],
+    "Estimated Affected Population": {
+      "Based on visible destruction and area density": "Given the dense urban nature of the affected area, potentially hundreds of thousands to millions of people are directly affected.",
+      "Risk categories": {
+        "Displaced": "Hundreds of thousands to millions (homes destroyed or uninhabitable)",
+        "Injured": "Tens of thousands to hundreds of thousands (from debris, collapse, drowning, disease)",
+        "Trapped": "Tens of thousands to hundreds of thousands (by floodwaters, collapsed structures)"
+      }
+    },
+    "Estimated Casualties": {
+      "Confidence level": "High",
+      "Potential fatalities estimate (range)": "Hundreds to several thousands",
+      "Potential injured estimate (range)": "Thousands to tens of thousands"
+    },
+    "Infrastructure Damage Assessment": {
+      "Bridges/Overpasses": "The prominent railway line running through the center of the image appears to be directly under the cyclone's eye and is likely affected by flooding and debris. Any bridges or overpasses within the affected area would be at high risk of structural damage from extreme winds, water erosion, and impact from debris. Their integrity is highly questionable.",
+      "Buildings": "Many buildings are obscured by the cyclone's cloud cover, but those visible, especially in flooded areas, are partially or fully submerged. Given the direct hit by the cyclone's eye, it is highly probable that a significant percentage of buildings have sustained severe structural damage, including roof detachment, wall collapse, and water ingress, rendering many uninhabitable. The sheer scale of the storm suggests widespread damage across all building types.",
+      "Other infrastructure": "Power lines are almost certainly downed across the entire affected area, leading to widespread power outages. Water supply systems are highly vulnerable to contamination and damage from flooding. Communication infrastructure (cell towers, fiber optic cables) would also be severely disrupted or destroyed. Sewage systems are likely overwhelmed and compromised, posing significant health risks.",
+      "Roads": "The road network is severely compromised. Extensive flooding has submerged numerous roads, making them impassable and likely causing structural damage to road surfaces and foundations. Debris from damaged structures and vegetation would further block any remaining accessible routes. The entire visible road network appears to be largely inaccessible."
+    },
+    "Recovery Timeline Estimate": {
+      "Long-term (3+ months)": "Full-scale reconstruction of homes and infrastructure, economic recovery, environmental rehabilitation, psychological support programs. This phase will likely extend for several years.",
+      "Medium-term (1-3 months)": "Extensive debris clearance, restoration of basic utilities (power, water), temporary housing solutions, initial repairs to critical infrastructure, disease control.",
+      "Short-term (0-7 days)": "Immediate search and rescue, emergency aid distribution, initial damage assessment, establishment of temporary shelters."
+    },
+    "Road Accessibility Status": {
+      "Comparison of road network before/after": "The 'BEFORE' image shows a clear, extensive, and functional road network. The 'AFTER' image shows this network almost entirely submerged, obscured, or damaged, rendering it non-functional for vehicular traffic.",
+      "Critical access routes affected": "All critical access routes, including major arteries and routes leading out of the city, are severely affected, blocked by floodwaters, debris, or structural damage. Emergency access is virtually impossible by ground.",
+      "Percentage of roads blocked or destroyed": "90-100%"
+    },
+    "Secondary Disaster Risks": [
+      {
+        "Risk": "Waterborne diseases",
+        "Risk level": "High"
+      },
+      {
+        "Risk": "Structural collapse of waterlogged or weakened buildings",
+        "Risk level": "High"
+      },
+      {
+        "Risk": "Electrocution from downed power lines in floodwaters",
+        "Risk level": "High"
+      },
+      {
+        "Risk": "Landslides (if hilly terrain is present nearby, though not explicitly visible)",
+        "Risk level": "Medium"
+      },
+      {
+        "Risk": "Lack of access to essential services (food, water, medical care)",
+        "Risk level": "High"
+      },
+      {
+        "Risk": "Psychological trauma for survivors",
+        "Risk level": "High"
+      }
+    ],
+    "Structural Dissimilarity Index": 85,
+    "Textual Description of Damage": "The 'AFTER' image reveals a catastrophic disaster caused by a powerful cyclonic storm directly impacting a densely populated urban area. The most prominent feature is the clear eye of the cyclone situated almost centrally over the visible urban landscape, indicating a direct hit with extreme winds and torrential rainfall. Widespread and severe flooding is evident, particularly on the eastern (right) side of the image, where large areas are submerged under turbid, brown water. Roads, lower levels of buildings, and open spaces are completely inundated. While the dense cloud cover of the cyclone obscures direct visibility of all ground-level damage, areas visible through thinner cloud patches show signs of structural damage, including potential roof loss and debris scattered across the urban fabric. The overall appearance of the city has transformed from a vibrant urban center to a disaster zone, characterized by the overwhelming presence of the storm and its devastating aftermath.",
+    "Vegetation Loss Percentage": "80%",
+    "metadata": {
+      "after_image_path": "./Cyclone.png",
+      "analysis_timestamp": "2026-02-21T18:46:04.785859",
+      "analysis_type": "comparative",
+      "before_image_path": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184545.png",
+      "model_used": "models/gemini-2.5-flash"
+    }
+  },
+  "disaster_type": "cyclone",
+  "metadata": {
+    "disaster_image": "./Cyclone.png",
+    "input": {
+      "distance_meters": 250,
+      "latitude": 18.6481533,
+      "longitude": 73.7630233
+    },
+    "polygon": {
+      "center": [73.7630233, 18.6481533],
+      "coordinates": [
+        [73.760653085846, 18.6459075220625],
+        [73.760653085846, 18.6503990779375],
+        [73.765393514154, 18.6503990779375],
+        [73.765393514154, 18.6459075220625],
+        [73.760653085846, 18.6459075220625]
+      ]
+    },
+    "satellite_image": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184545.png",
+    "timestamp": "2026-02-21T18:45:45.206527"
+  },
+  "status": "success"
+}

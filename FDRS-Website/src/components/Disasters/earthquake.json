@@ -1,0 +1,125 @@
+{
+  "assessment": {
+    "Additional Numerical Metrics": {
+      "Area affected (km²)": "Approximately 16 km² (within the visible frame, likely larger overall impact zone).",
+      "Critical infrastructure damaged": "100% of roads, railway, power, and water systems in the core affected areas are severely damaged or non-functional.",
+      "Estimated displaced persons": "200,000 - 400,000",
+      "Water/power outage percentage": "95-100% in the heavily damaged zones."
+    },
+    "Building Destruction Percentage": "65%",
+    "Damage Severity Category": "Catastrophic",
+    "Damage Severity Score": 92,
+    "Disaster Intensity Rating": 10,
+    "Disaster Type Identified": "Earthquake",
+    "Disaster-Specific Impact": {
+      "Describe specific disaster indicators visible in the images": "The most prominent indicators are the extensive ground fissures (cracks) visible across the entire landscape and the widespread, simultaneous collapse of numerous buildings. The dark plumes are consistent with massive dust clouds from structural collapses, likely mixed with smoke from secondary fires ignited by ruptured gas lines or electrical systems.",
+      "Quantify the extent of disaster-specific damage": "The ground deformation and structural damage are widespread, affecting the entire visible area of approximately 16 km², indicating a major seismic event with a very large impact zone. The damage is not localized but distributed across the urban environment."
+    },
+    "Economic Impact Estimate": {
+      "Estimated infrastructure damage cost": "$10 billion - $50 billion USD",
+      "Impact category": "Catastrophic",
+      "Property losses estimate": "$50 billion - $200 billion USD",
+      "Total economic impact range": "$60 billion - $250 billion USD"
+    },
+    "Emergency Response Recommendations": {
+      "Evacuation recommendations": "Immediate mass evacuation of all survivors from heavily damaged and unstable areas to designated safe zones or temporary shelters. Prioritize evacuation of injured, vulnerable populations (elderly, children), and those trapped in precarious structures.",
+      "Immediate actions needed (prioritized)": [
+        "1. Prioritize large-scale Search and Rescue (SAR) operations in all accessible damaged areas, focusing on collapsed structures.",
+        "2. Establish immediate medical triage centers and field hospitals for mass casualties, ensuring rapid treatment and evacuation of critically injured.",
+        "3. Deploy fire suppression units to contain and extinguish active fires, preventing further spread and protecting rescue teams.",
+        "4. Conduct rapid damage assessments to identify safe zones, critical access routes, and areas requiring immediate structural stabilization.",
+        "5. Secure and clear critical access routes for emergency vehicle movement and humanitarian aid delivery."
+      ],
+      "Required emergency services": "Heavy urban SAR teams, medical personnel (doctors, nurses, paramedics), structural engineers, fire brigades, logistics and debris removal teams, psychological support teams, and public health experts."
+    },
+    "Estimated Affected Population": {
+      "Based on visible destruction and area density": "Based on the high density of the urban area and the widespread catastrophic destruction, an estimated 200,000 - 400,000 people are directly affected within the visible area.",
+      "Risk categories (trapped, injured, displaced)": {
+        "Displaced": "Hundreds of thousands",
+        "Injured": "Tens to hundreds of thousands",
+        "Trapped": "Tens of thousands"
+      }
+    },
+    "Estimated Casualties": {
+      "Confidence level": "Medium",
+      "Potential fatalities estimate (range)": "15,000 - 75,000",
+      "Potential injured estimate (range)": "75,000 - 300,000"
+    },
+    "Infrastructure Damage Assessment": {
+      "Bridges/Overpasses": "The railway line and associated infrastructure (including potential bridges/overpasses, though not explicitly clear from this altitude) are directly impacted by ground fissures, compromising their structural integrity and functionality.",
+      "Buildings": "Catastrophic damage. An estimated 60-80% of buildings within the heavily affected zones appear to be destroyed or severely compromised. Many multi-story structures are reduced to rubble, indicating widespread pancaking or complete collapse.",
+      "Other infrastructure": "Underground utilities (water, sewage, gas) and above-ground power lines would be extensively damaged or completely severed due to ground movement and building collapse, leading to widespread and prolonged outages across the affected area.",
+      "Roads": "Extensive damage. Roads are visibly fractured by severe ground cracks, covered in debris from collapsed buildings, and rendered largely impassable. Major thoroughfares are affected, severing connectivity."
+    },
+    "Recovery Timeline Estimate": {
+      "Long-term (3+ months)": "Full-scale reconstruction of buildings and infrastructure, comprehensive urban planning adjustments for resilience, economic recovery, and long-term psychosocial support. This phase will likely extend for several years (5-10+ years).",
+      "Medium-term (1-3 months)": "Extensive debris removal, restoration of basic utilities (water, limited power), establishment of temporary housing solutions, detailed damage assessment, and initial planning for reconstruction.",
+      "Short-term (0-7 days)": "Immediate SAR operations, medical aid provision, critical infrastructure stabilization, initial debris clearance, establishment of temporary shelters, and emergency food/water distribution."
+    },
+    "Road Accessibility Status": {
+      "Comparison of road network before/after": "The coherent and functional road network from the 'BEFORE' image is now fragmented, largely non-functional, and severely hinders emergency response and evacuation efforts.",
+      "Critical access routes affected": "Major arterial roads and the main railway line, crucial for transportation and logistics, are severely compromised or completely impassable due to ground deformation and debris.",
+      "Percentage of roads blocked or destroyed": "An estimated 70-90% of the road network in the core affected areas is blocked by debris or destroyed by ground fissures, making most routes impassable."
+    },
+    "Secondary Disaster Risks": [
+      {
+        "Description": "Typical following a major earthquake, aftershocks pose a high risk of causing further collapse of already weakened structures and endangering rescue workers and survivors.",
+        "Risk": "Aftershocks",
+        "Risk Level": "High"
+      },
+      {
+        "Description": "Indicated by dark plumes, fires are likely from ruptured gas lines and electrical shorts. These fires could spread rapidly in the presence of debris and damaged infrastructure, complicating rescue efforts.",
+        "Risk": "Fires",
+        "Risk Level": "High"
+      },
+      {
+        "Description": "Remaining damaged buildings and infrastructure pose a severe threat of collapse, endangering rescue workers and survivors and hindering access.",
+        "Risk": "Structural Instability",
+        "Risk Level": "High"
+      },
+      {
+        "Description": "From damaged industrial facilities or commercial properties, potentially contaminating the environment and posing health risks.",
+        "Risk": "Hazardous Material Spills",
+        "Risk Level": "Medium"
+      },
+      {
+        "Description": "Due to lack of clean water, sanitation, potential for disease outbreaks from decaying bodies, and contaminated environments over time.",
+        "Risk": "Public Health Crisis",
+        "Risk Level": "Medium-High"
+      }
+    ],
+    "Structural Dissimilarity Index": 90,
+    "Textual Description of Damage": "The 'AFTER' image reveals a scene of widespread and catastrophic destruction following a major seismic event. The most striking features are the numerous, extensive ground fissures that crisscross the entire visible urban landscape, indicating severe ground deformation and liquefaction in some areas. These cracks run through residential areas, roads, and even the main railway line, visibly disrupting the ground. The urban fabric has been decimated; countless buildings, previously visible as distinct structures in the 'BEFORE' image, are now reduced to piles of rubble or have completely collapsed. This widespread structural failure is evident across all densely built-up areas. Several large, dark plumes of smoke or dust are visible, particularly in the central and western parts of the image, strongly suggesting either massive dust clouds from collapses or secondary fires ignited by ruptured gas lines or electrical systems. The area around the circular stadium/field in the western part shows significant damage, with buildings surrounding it largely destroyed and a large plume rising from that vicinity. The main railway line and adjacent roads, clearly defined in the 'BEFORE' image, are now visibly fractured and likely impassable due to ground cracks and debris. The overall impression is one of an urban area that has been violently shaken and torn apart, with extensive ground failure and structural collapse.",
+    "Vegetation Loss Percentage": "2%",
+    "metadata": {
+      "after_image_path": "./Earthquake.png",
+      "analysis_timestamp": "2026-02-21T18:45:45.159542",
+      "analysis_type": "comparative",
+      "before_image_path": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184519.png",
+      "model_used": "models/gemini-2.5-flash"
+    }
+  },
+  "disaster_type": "earthquake",
+  "metadata": {
+    "disaster_image": "./Earthquake.png",
+    "input": {
+      "distance_meters": 250,
+      "latitude": 18.6481533,
+      "longitude": 73.7630233
+    },
+    "polygon": {
+      "center": [73.7630233, 18.6481533],
+      "coordinates": [
+        [73.760653085846, 18.6459075220625],
+        [73.760653085846, 18.6503990779375],
+        [73.765393514154, 18.6503990779375],
+        [73.765393514154, 18.6459075220625],
+        [73.760653085846, 18.6459075220625]
+      ]
+    },
+    "satellite_image": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184519.png",
+    "timestamp": "2026-02-21T18:45:18.443510"
+  },
+  "status": "success"
+}
+

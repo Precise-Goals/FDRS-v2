@@ -1,0 +1,140 @@
+{
+  "assessment": {
+    "Additional Numerical Metrics": {
+      "Area affected (km²)": "Approximately 0.4 - 0.6 km² (direct impact zone).",
+      "Critical infrastructure damaged": "1 major railway/road corridor, multiple local roads, all utilities (power, water, communication) in the direct impact zone.",
+      "Estimated displaced persons": "1,000 - 5,000+.",
+      "Water/power outage percentage": "100% in the immediate landslide footprint; significant disruption in surrounding areas."
+    },
+    "Building Destruction Percentage": "Estimated 70-90% of buildings within the direct landslide footprint are destroyed or rendered uninhabitable.",
+    "Damage Severity Category": "Catastrophic",
+    "Damage Severity Score": 85,
+    "Disaster Intensity Rating": 9,
+    "Disaster Type Identified": "Landslide",
+    "Disaster-Specific Impact": {
+      "Describe specific disaster indicators visible in the images": "The most prominent indicator is the large, reddish-brown mass of displaced earth, clearly showing a flow pattern from the hill into the urban area. The distinct 'scar' on the hillside where the landslide originated, and the burial of man-made structures under this material, are definitive signs of a landslide.",
+      "Quantify the extent of disaster-specific damage": "The landslide has affected an area roughly 0.4 - 0.6 km² (approximately 0.5 km wide at its base, extending 0.8-1.2 km from its origin). This includes a significant portion of a densely populated residential zone and a critical transportation corridor."
+    },
+    "Economic Impact Estimate": {
+      "Estimated infrastructure damage cost": "Hundreds of millions to billions of USD (due to destruction of railway, major roads, utilities).",
+      "Impact category": "Catastrophic",
+      "Property losses estimate": "Hundreds of millions to billions of USD (due to destruction of 50-100+ multi-story residential buildings).",
+      "Total economic impact range": "Estimated 1-5+ billion USD."
+    },
+    "Emergency Response Recommendations": [
+      {
+        "Action": "Immediate Search and Rescue (SAR) operations",
+        "Details": "Deploy specialized SAR teams with K9 units and heavy lifting equipment to search for survivors trapped under debris. Focus on areas where residential structures were most heavily impacted.",
+        "Priority": "High"
+      },
+      {
+        "Action": "Medical aid and triage",
+        "Details": "Establish field hospitals and mobile medical units to treat the injured. Prioritize severe trauma cases and provide psychological first aid.",
+        "Priority": "High"
+      },
+      {
+        "Action": "Perimeter security and access control",
+        "Details": "Secure the affected area to prevent unauthorized entry, ensure responder safety, and manage traffic flow for emergency vehicles.",
+        "Priority": "High"
+      },
+      {
+        "Action": "Geotechnical assessment",
+        "Details": "Conduct an urgent assessment of the landslide source and surrounding slopes to identify areas at risk of secondary slides and ensure responder safety.",
+        "Priority": "High"
+      },
+      {
+        "Action": "Debris removal and road clearance",
+        "Details": "Begin clearing critical access routes (e.g., the diagonal railway/roadway) using heavy machinery to facilitate further response and recovery efforts.",
+        "Priority": "Medium"
+      },
+      {
+        "Action": "Establish temporary shelters and aid distribution",
+        "Details": "Provide immediate shelter, food, water, and sanitation facilities for displaced persons.",
+        "Priority": "Medium"
+      }
+    ],
+    "Estimated Affected Population": {
+      "Based on visible destruction and area density": "Given the dense residential nature of the affected area, and assuming multi-story buildings, the directly affected population is estimated to be in the range of 1,000 to 5,000 people.",
+      "Risk categories": {
+        "Displaced": "Thousands (likely 1,000-5,000+)",
+        "Injured": "Hundreds to thousands (likely 500-2000+)",
+        "Trapped": "Hundreds (likely 200-1000+)"
+      }
+    },
+    "Estimated Casualties": {
+      "Confidence level": "High",
+      "Potential fatalities estimate (range)": "Given the sudden nature of the landslide and the burial of numerous residential structures, potential fatalities are estimated to be in the range of 100 to 500+.",
+      "Potential injured estimate (range)": "Potential injured persons are estimated to be in the range of 500 to 2,000+."
+    },
+    "Infrastructure Damage Assessment": {
+      "Bridges/Overpasses": "While no specific bridges are clearly identified as destroyed, the railway line/roadway, which may include culverts or smaller overpasses, is completely buried in the affected section, indicating severe damage to this critical transport link.",
+      "Buildings": "Numerous multi-story residential buildings in the direct path of the landslide are completely destroyed, buried, or severely compromised. An estimated 50-100+ buildings appear to be directly affected. Buildings immediately adjacent to the main flow path may also have sustained structural damage from impact or ground vibration.",
+      "Other infrastructure": "Power lines, water supply pipes, sewage systems, and communication lines running through the affected area would be completely destroyed or severely damaged, leading to widespread utility outages in the immediate and surrounding areas.",
+      "Roads": "Multiple roads within the affected urban area are completely covered by landslide debris, rendering them impassable. The primary diagonal road/railway corridor is severed at a critical point, causing major disruption to transportation. Secondary roads branching off this main artery are also obliterated."
+    },
+    "Recovery Timeline Estimate": {
+      "Long-term (3+ months)": "Full reconstruction of destroyed infrastructure and buildings, extensive slope stabilization efforts, potential relocation of communities, long-term psychological support, and economic recovery.",
+      "Medium-term (1-3 months)": "Extensive debris removal, restoration of critical utilities (where possible), temporary road repairs, detailed geological surveys, planning for resettlement/reconstruction.",
+      "Short-term (0-7 days)": "Immediate search and rescue, medical aid, initial damage assessment, securing unstable areas, establishing temporary shelters."
+    },
+    "Road Accessibility Status": {
+      "Comparison of road network before/after": "Before, a clear, interconnected road network was visible. After, a large section of this network is obliterated, replaced by a chaotic mass of earth and debris, creating significant barriers to movement.",
+      "Critical access routes affected": "The primary diagonal railway line/roadway is a critical access route that has been completely severed. This will significantly hinder emergency response and long-term recovery efforts, requiring extensive detours or reconstruction.",
+      "Percentage of roads blocked or destroyed": "Approximately 70-80% of the road network within the direct landslide path is completely blocked or destroyed. This includes a major arterial route (the diagonal road/railway line) and numerous smaller residential streets."
+    },
+    "Secondary Disaster Risks": [
+      {
+        "Reason": "The source area of the landslide is now destabilized, and surrounding slopes may be prone to further collapse, especially with continued adverse weather (e.g., heavy rainfall).",
+        "Risk": "Further landslides/slope instability",
+        "Risk Level": "High"
+      },
+      {
+        "Reason": "Buildings partially buried or adjacent to the landslide path may have compromised structural integrity, posing a risk of collapse.",
+        "Risk": "Infrastructure collapse (damaged buildings)",
+        "Risk Level": "Medium"
+      },
+      {
+        "Reason": "While not directly visible, if industrial or waste sites were buried, there's a potential for contamination of soil and groundwater.",
+        "Risk": "Environmental contamination",
+        "Risk Level": "Low"
+      },
+      {
+        "Reason": "Disruption of water/sewage systems, presence of decomposing bodies, and lack of sanitation in temporary shelters could lead to disease outbreaks.",
+        "Risk": "Public health crisis",
+        "Risk Level": "Medium"
+      }
+    ],
+    "Structural Dissimilarity Index": 88,
+    "Textual Description of Damage": "The 'AFTER' image reveals a catastrophic landslide originating from the heavily forested hill in the upper right quadrant, extending downwards into a densely populated urban area. A massive flow of reddish-brown earth, soil, and debris has descended, completely engulfing a significant portion of the residential and infrastructural landscape. The landslide has created a wide, irregular path of destruction, obliterating buildings, roads, and a section of the prominent diagonal railway line/roadway that traverses the image. The immediate impact zone shows structures either completely buried under the debris or severely damaged and partially submerged. The distinct flow pattern of the earth material is clearly visible, indicating a rapid and forceful event. The forested area at the origin of the slide now bears a large, barren scar, signifying significant vegetation loss and ground instability.",
+    "Vegetation Loss Percentage": "Significant vegetation loss (estimated 80-90%) is visible at the origin point of the landslide on the forested hill. Additionally, any green spaces or trees within the urban impact zone are now buried under debris, contributing to localized vegetation loss.",
+    "metadata": {
+      "after_image_path": "./Landslide.png",
+      "analysis_timestamp": "2026-02-21T18:46:23.175130",
+      "analysis_type": "comparative",
+      "before_image_path": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184605.png",
+      "model_used": "models/gemini-2.5-flash"
+    }
+  },
+  "disaster_type": "landslide",
+  "metadata": {
+    "disaster_image": "./Landslide.png",
+    "input": {
+      "distance_meters": 250,
+      "latitude": 18.6481533,
+      "longitude": 73.7630233
+    },
+    "polygon": {
+      "center": [73.7630233, 18.6481533],
+      "coordinates": [
+        [73.760653085846, 18.6459075220625],
+        [73.760653085846, 18.6503990779375],
+        [73.765393514154, 18.6503990779375],
+        [73.765393514154, 18.6459075220625],
+        [73.760653085846, 18.6459075220625]
+      ]
+    },
+    "satellite_image": "./data/satellite_images/satellite_18.6481533_73.7630233_20260221_184605.png",
+    "timestamp": "2026-02-21T18:46:04.816007"
+  },
+  "status": "success"
+}
