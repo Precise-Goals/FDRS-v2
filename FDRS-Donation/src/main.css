@@ -1598,14 +1598,12 @@ button.btn-connect {
 }
 
 nav.navbar {
-  padding: 1.25% 13%;
-}
-nav.navbar {
     padding: 1.25% 13%;
     background: black;
 }
 
-.logo-heart, .logo-text {
+.logo-heart,
+.logo-text {
     color: white;
 }
 

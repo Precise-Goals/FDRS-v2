@@ -11,6 +11,7 @@ import {
   createCampaign,
   recordDonation,
 } from "./utils/firebase.js";
+import "./app.css";
 
 /* ─── Format INR ─────────────────────────────────────────── */
 function formatINR(num) {
