@@ -184,10 +184,15 @@ function Dashboard() {
     }
   };
 
-  const filteredSignals =
+  const filteredSignals = (
     statusFilter === "all"
       ? signals
-      : signals.filter((s) => s.status === statusFilter);
+      : signals.filter((s) => s.status === statusFilter)
+  ).sort((a, b) => {
+    const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+    const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+    return timeB - timeA;
+  });
 
   const statusDot = (status) => {
     const colors = {
