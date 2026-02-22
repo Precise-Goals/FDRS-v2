@@ -32,7 +32,7 @@ export const LandingPage = () => {
           <Link to="/signup" className="auth-button">
             Sign Up
           </Link>
-          <Link to="https://fdrs-donation.netlify.app/" target="_blank" className="auth-button">Donation Platform</Link>
+          <Link to="https://fdrs-donations.vercel.app/" target="_blank" className="auth-button">Donation Platform</Link>
         </div> 
       </div>
       <div className="wrp">
