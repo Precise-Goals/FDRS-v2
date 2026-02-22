@@ -40,7 +40,7 @@ export const Navbar = () => {
             </li>
 
             <li>
-              <Link to="https://fdrs-donations.vercel.app/" target="_blank">
+              <Link to="/fdrs-blockchain-donation" target="_blank">
                 Relief Platform
               </Link>
             </li>

@@ -428,7 +428,7 @@ class _BluetoothQuitchatScreenState extends State<BluetoothQuitchatScreen> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 125),
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 8, bottom: 135),
           color: AppTheme.panelGray,
           child: Row(
             children: [
@@ -446,13 +446,14 @@ class _BluetoothQuitchatScreenState extends State<BluetoothQuitchatScreen> {
                     filled: true,
                     fillColor: Colors.black26,
                     contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
+                        horizontal: 20, vertical: 20),
                   ),
                 ),
               ),
-              const SizedBox(width: 8),
+              const SizedBox(width: 10),
               CircleAvatar(
                 backgroundColor: AppTheme.accentRed,
+                radius: 30,
                 child: IconButton(
                   icon: const Icon(Icons.send, color: Colors.white),
                   onPressed: _sendMessage,
