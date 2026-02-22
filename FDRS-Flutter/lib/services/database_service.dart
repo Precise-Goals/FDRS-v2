@@ -70,4 +70,19 @@ class DatabaseService {
       return false;
     }
   }
+
+  /// Removes a distress signal from /signals in RTDB.
+  Future<void> deleteDistressSignal({
+    required String userId,
+    required String buildNumber,
+  }) async {
+    try {
+      final sanitizedBuild = buildNumber.replaceAll(RegExp(r'[.#$\[\]]'), '_');
+      final signalId = '${userId}_$sanitizedBuild';
+      await _db.child('signals').child(signalId).remove();
+      debugPrint('[RTDB] Distress signal deleted/expired for $userId');
+    } catch (e) {
+      debugPrint('[RTDB] Failed to delete distress signal: $e');
+    }
+  }
 }

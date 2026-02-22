@@ -77,13 +77,15 @@ class OfflineDistressQueue {
 
     for (final signal in queue) {
       try {
-        final ok = await dbService.sendDistressSignal(
-          userId: signal['userId'] as String,
-          latitude: (signal['latitude'] as num).toDouble(),
-          longitude: (signal['longitude'] as num).toDouble(),
-          buildNumber: signal['buildNumber'] as String,
-          timestamp: signal['timestamp'] as String,
-        );
+        final ok = await dbService
+            .sendDistressSignal(
+              userId: signal['userId'] as String,
+              latitude: (signal['latitude'] as num).toDouble(),
+              longitude: (signal['longitude'] as num).toDouble(),
+              buildNumber: signal['buildNumber'] as String,
+              timestamp: signal['timestamp'] as String,
+            )
+            .timeout(const Duration(seconds: 5));
         if (!ok) remaining.add(signal);
       } catch (_) {
         remaining.add(signal);

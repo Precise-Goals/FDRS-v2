@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
@@ -113,9 +114,14 @@ class DistressService {
 
     // Simulated: radio succeeds ~50% of the time in demo mode.
     // In production, replace with real hardware result.
-    // For now, we'll return false so the cache tier gets exercised
-    // in offline scenarios, making the demo more useful.
-    debugPrint('[Radio] Radio link unavailable (simulated)');
-    return false;
+    final bool success = Random().nextBool();
+    if (success) {
+      debugPrint('[Radio] Radio link successful (simulated)');
+      return true;
+    } else {
+      debugPrint(
+          '[Radio] Radio link unavailable (simulated) - Falling back to Cache');
+      return false;
+    }
   }
 }
