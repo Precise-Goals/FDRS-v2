@@ -494,7 +494,7 @@ class _QwenScreenState extends State<QwenScreen> {
 
   Widget _buildMessageInput() {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(top: 16, bottom: 100, left: 16, right: 16),
       decoration: const BoxDecoration(
         color: Color(0xFF1A1A1A),
         border: Border(top: BorderSide(color: Colors.white12)),
