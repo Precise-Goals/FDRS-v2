@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../viewmodels/main_viewmodel.dart';
 import 'sos_screen.dart';
 import 'knowledge_base_screen.dart';
+import 'bluetooth_quitchat_screen.dart';
 import 'profile_screen.dart';
 import 'login_screen.dart';
 import '../services/auth_service.dart';
@@ -41,6 +42,7 @@ class MainScreen extends StatelessWidget {
     final screens = [
       const SosScreen(),
       const KnowledgeBaseScreen(),
+      const BluetoothQuitchatScreen(),
       authService.isLoggedIn ? const ProfileScreen() : const LoginScreen(),
     ];
 
@@ -60,7 +62,7 @@ class MainScreen extends StatelessWidget {
     return Center(
       child: Container(
         height: 70,
-        width: MediaQuery.of(context).size.width * 0.85,
+        width: MediaQuery.of(context).size.width * 0.90,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(20, 20, 20, 0.85),
           borderRadius: BorderRadius.circular(40),
@@ -84,7 +86,9 @@ class MainScreen extends StatelessWidget {
                 _buildNavItem(
                     context, model, 1, Icons.info_outline_rounded, 'Info'),
                 _buildNavItem(
-                    context, model, 2, Icons.person_outline_rounded, 'Profile'),
+                    context, model, 2, Icons.bluetooth_rounded, 'Chat'),
+                _buildNavItem(
+                    context, model, 3, Icons.person_outline_rounded, 'Profile'),
               ],
             ),
           ),
@@ -101,7 +105,7 @@ class MainScreen extends StatelessWidget {
       onTap: () => model.onTabTapped(index),
       behavior: HitTestBehavior.opaque,
       child: SizedBox(
-        width: 80,
+        width: 70,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

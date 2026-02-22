@@ -171,7 +171,7 @@ class _SosScreenState extends State<SosScreen> with TickerProviderStateMixin {
                   color: Colors.blue[900]?.withAlpha(13),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.blue[900]!.withOpacity(0.25),
+                        color: Colors.blue[900]!.withValues(alpha: 0.25),
                         blurRadius: 100,
                         spreadRadius: -50)
                   ],
