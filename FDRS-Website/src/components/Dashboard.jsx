@@ -139,7 +139,9 @@ function Dashboard() {
       }
     });
 
-    return () => unsubscribe();
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const handleEditToggle = () => {
@@ -226,8 +228,17 @@ function Dashboard() {
     { key: "longitude", label: "Longitude" },
   ];
 
+  const getDeptColor = (type, fallback = "#e5e7eb") => {
+    const t = (type || "").toLowerCase().replace(/\s+/g, "");
+    if (t === "hospital") return "#ef4444";
+    if (t === "police") return "#3b82f6";
+    if (t === "firedepartment" || t === "fire") return "#f97316";
+    if (["ndrf", "crpf", "rpf"].includes(t)) return "#22c55e";
+    return fallback;
+  };
+
   const typeSpecificFields = () => {
-    const t = adminDetails?.type || "";
+    const t = (adminDetails?.type || "").toLowerCase().replace(/\s+/g, "");
     if (["ndrf", "crpf", "rpf"].includes(t)) {
       return [
         { key: "battalionNumber", label: "Battalion Number" },
@@ -242,7 +253,7 @@ function Dashboard() {
         { key: "ambulanceCount", label: "Ambulance Count" },
       ];
     }
-    if (t === "firedepartment") {
+    if (t === "firedepartment" || t === "fire") {
       return [
         { key: "vehicleCount", label: "Vehicle Count" },
         { key: "coverageRadiusKm", label: "Coverage Radius (km)" },
@@ -266,9 +277,17 @@ function Dashboard() {
 
         {/* Editable Admin Details - just below title */}
         {adminDetails && (
-          <div className="admin-card">
+          <div
+            className="admin-card"
+            style={{
+              borderTop: `4px solid ${getDeptColor(adminDetails.type)}`,
+            }}
+          >
             <div className="admin-card-header">
-              <span className="admin-card-title">
+              <span
+                className="admin-card-title"
+                style={{ color: getDeptColor(adminDetails.type, "#111") }}
+              >
                 {adminDetails.deptname || "Department"}
               </span>
               <div className="admin-card-actions">
