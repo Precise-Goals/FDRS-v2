@@ -32,7 +32,7 @@ function App() {
             <Route path="/fdrs-development-team" element={<Teams />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/fdrs-blockchain-donation" element={<Blockch />} />
+            {/* <Route path="/fdrs-blockchain-donation" element={<Blockch />} /> */}
             <Route path="/diso" element={<Diso />} />
             <Route
               path="/dashboard"
