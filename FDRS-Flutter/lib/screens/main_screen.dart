@@ -5,6 +5,7 @@ import '../viewmodels/main_viewmodel.dart';
 import 'sos_screen.dart';
 import 'knowledge_base_screen.dart';
 import 'bluetooth_quitchat_screen.dart';
+import 'qwen_screen.dart';
 import 'profile_screen.dart';
 import 'login_screen.dart';
 import '../services/auth_service.dart';
@@ -43,6 +44,7 @@ class MainScreen extends StatelessWidget {
       const SosScreen(),
       const KnowledgeBaseScreen(),
       const BluetoothQuitchatScreen(),
+      const QwenScreen(),
       authService.isLoggedIn ? const ProfileScreen() : const LoginScreen(),
     ];
 
@@ -84,11 +86,13 @@ class MainScreen extends StatelessWidget {
               children: [
                 _buildNavItem(context, model, 0, Icons.home_rounded, 'Home'),
                 _buildNavItem(
-                    context, model, 1, Icons.info_outline_rounded, 'Info'),
-                _buildNavItem(
                     context, model, 2, Icons.bluetooth_rounded, 'Chat'),
                 _buildNavItem(
-                    context, model, 3, Icons.person_outline_rounded, 'Profile'),
+                    context, model, 3, Icons.smart_toy_rounded, 'Qwen'),
+                _buildNavItem(
+                    context, model, 1, Icons.info_outline_rounded, 'Info'),
+                _buildNavItem(
+                    context, model, 4, Icons.person_outline_rounded, 'Profile'),
               ],
             ),
           ),
@@ -105,13 +109,14 @@ class MainScreen extends StatelessWidget {
       onTap: () => model.onTabTapped(index),
       behavior: HitTestBehavior.opaque,
       child: SizedBox(
-        width: 70,
+        width: MediaQuery.of(context).size.width *
+            0.16, // Dynamic width for 5 items
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: 40,
-              height: 40,
+              width: 36,
+              height: 36,
               decoration: isSelected
                   ? BoxDecoration(
                       color: const Color.fromRGBO(255, 255, 255, 0.1),
@@ -130,19 +135,20 @@ class MainScreen extends StatelessWidget {
                 color: isSelected
                     ? (index == 1 ? const Color(0xFFFF9500) : Colors.white)
                     : Colors.grey[500],
-                size: 28,
+                size: 24,
               ),
             ),
             const SizedBox(height: 2),
             Text(
               label.toUpperCase(),
               style: TextStyle(
-                fontSize: 10,
+                fontSize: 9,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 0.5,
                 color: isSelected ? Colors.white : Colors.grey[500],
               ),
             ),
+            const SizedBox(height: 4),
           ],
         ),
       ),
