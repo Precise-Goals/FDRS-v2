@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
+import '../services/qwen_model_service.dart';
 
 class QwenScreen extends StatefulWidget {
   const QwenScreen({super.key});
@@ -18,6 +19,7 @@ class _QwenScreenState extends State<QwenScreen> {
       'https://huggingface.co/Qwen/Qwen1.5-1.8B-Chat-GGUF/resolve/main/qwen1_5-1_8b-chat-q4_k_m.gguf';
 
   final TextEditingController _msgController = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
   final List<Map<String, String>> _messages = [];
 
   _DownloadState _downloadState = _DownloadState.initial;
@@ -25,12 +27,25 @@ class _QwenScreenState extends State<QwenScreen> {
   int _totalBytes = 0;
   CancelToken? _cancelToken;
 
+  // ML inference state
+  final QwenModelService _modelService = QwenModelService();
+  bool _isModelLoading = false;
+  bool _isGenerating = false;
+
   bool get _isModelDownloaded => _downloadState == _DownloadState.completed;
 
   @override
   void initState() {
     super.initState();
     _checkModelStatus();
+  }
+
+  @override
+  void dispose() {
+    _modelService.unloadModel();
+    _msgController.dispose();
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Future<void> _checkModelStatus() async {
@@ -71,8 +86,47 @@ class _QwenScreenState extends State<QwenScreen> {
           _downloadState = _DownloadState.initial;
         }
       });
+
+      // If model is already downloaded, load it
+      if (_downloadState == _DownloadState.completed) {
+        _loadModelIntoMemory();
+      }
     } catch (e) {
       debugPrint("Error checking model file: $e");
+    }
+  }
+
+  /// Load the GGUF model into memory for inference.
+  Future<void> _loadModelIntoMemory() async {
+    if (_modelService.isLoaded || _isModelLoading) return;
+
+    setState(() => _isModelLoading = true);
+
+    try {
+      final dir = await getApplicationDocumentsDirectory();
+      final modelPath = '${dir.path}/$_modelFileName';
+      final success = await _modelService.loadModel(modelPath);
+
+      if (mounted) {
+        setState(() => _isModelLoading = false);
+
+        if (success) {
+          debugPrint('Model loaded and ready for inference');
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                  'Failed to load AI model. Try removing and re-downloading.'),
+              backgroundColor: Colors.redAccent,
+            ),
+          );
+        }
+      }
+    } catch (e) {
+      debugPrint('Error loading model: $e');
+      if (mounted) {
+        setState(() => _isModelLoading = false);
+      }
     }
   }
 
@@ -147,6 +201,9 @@ class _QwenScreenState extends State<QwenScreen> {
           const SnackBar(content: Text('Model downloaded successfully!')),
         );
       }
+
+      // Auto-load the model after download completes
+      _loadModelIntoMemory();
     } on DioException catch (e) {
       if (CancelToken.isCancel(e)) {
         if (mounted && _downloadState != _DownloadState.initial) {
@@ -202,10 +259,11 @@ class _QwenScreenState extends State<QwenScreen> {
   }
 
   Future<void> _removeModel() async {
+    await _modelService.unloadModel();
     await _cancelAndClearDownload();
     if (mounted) {
       setState(() {
-        _messages.clear(); // Clear chat history
+        _messages.clear();
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Offline AI model removed successfully.')),
@@ -213,19 +271,87 @@ class _QwenScreenState extends State<QwenScreen> {
     }
   }
 
-  void _sendMessage() {
-    if (_msgController.text.trim().isEmpty) return;
+  /// Send a message and stream the AI response token-by-token.
+  Future<void> _sendMessage() async {
+    final text = _msgController.text.trim();
+    if (text.isEmpty) return;
+
+    if (!_modelService.isLoaded) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Model is still loading. Please wait...'),
+          backgroundColor: Colors.orange,
+        ),
+      );
+      return;
+    }
+
+    if (_isGenerating) return;
 
     setState(() {
-      _messages.add({'sender': 'user', 'text': _msgController.text.trim()});
-
-      // Simulated response since the actual offline inference engine isn't connected yet.
-      _messages.add({
-        'sender': 'qwen',
-        'text':
-            "I am Qwen's offline simulation. If the ML engine were connected, I would respond using the downloaded $_modelFileName model."
-      });
+      _messages.add({'sender': 'user', 'text': text});
+      // Add a placeholder for the AI response
+      _messages.add({'sender': 'qwen', 'text': ''});
+      _isGenerating = true;
       _msgController.clear();
+    });
+
+    _scrollToBottom();
+
+    final responseIndex = _messages.length - 1;
+    final responseBuffer = StringBuffer();
+
+    try {
+      // Build history excluding the placeholder
+      final history = _messages.sublist(0, responseIndex);
+
+      await for (final token in _modelService.generateResponse(text, history)) {
+        if (!mounted) break;
+        responseBuffer.write(token);
+        setState(() {
+          _messages[responseIndex] = {
+            'sender': 'qwen',
+            'text': responseBuffer.toString(),
+          };
+        });
+        _scrollToBottom();
+      }
+
+      // If response is empty, show a fallback
+      if (responseBuffer.isEmpty && mounted) {
+        setState(() {
+          _messages[responseIndex] = {
+            'sender': 'qwen',
+            'text': 'I couldn\'t generate a response. Please try again.',
+          };
+        });
+      }
+    } catch (e) {
+      debugPrint('Error during generation: $e');
+      if (mounted) {
+        setState(() {
+          _messages[responseIndex] = {
+            'sender': 'qwen',
+            'text': 'Error: $e',
+          };
+        });
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isGenerating = false);
+      }
+    }
+  }
+
+  void _scrollToBottom() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_scrollController.hasClients) {
+        _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.easeOut,
+        );
+      }
     });
   }
 
@@ -424,22 +550,6 @@ class _QwenScreenState extends State<QwenScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 24),
-              TextButton(
-                onPressed: () {
-                  setState(() {
-                    _downloadState = _DownloadState.completed;
-                  });
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text('Simulating model downloaded locally.')),
-                  );
-                },
-                child: const Text(
-                  'Simulate Download (For Testing UI)',
-                  style: TextStyle(color: Colors.grey),
-                ),
-              ),
             ],
           ],
         ),
@@ -448,47 +558,175 @@ class _QwenScreenState extends State<QwenScreen> {
   }
 
   Widget _buildChatInterface() {
+    // Show loading state while the model is being loaded into memory
+    if (_isModelLoading) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              width: 60,
+              height: 60,
+              child: CircularProgressIndicator(
+                color: Color(0xFFFF9500),
+                strokeWidth: 3,
+              ),
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              'Loading AI Model...',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              'This may take a few seconds on first launch',
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.6),
+                fontSize: 14,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Column(
       children: [
         Expanded(
-          child: ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: _messages.length,
-            itemBuilder: (context, index) {
-              final msg = _messages[index];
-              final isUser = msg['sender'] == 'user';
-              return Align(
-                alignment:
-                    isUser ? Alignment.centerRight : Alignment.centerLeft,
-                child: Container(
-                  margin: const EdgeInsets.only(bottom: 12),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  decoration: BoxDecoration(
-                    color: isUser ? const Color(0xFFFF9500) : Colors.grey[800],
-                    borderRadius: BorderRadius.circular(16).copyWith(
-                      bottomRight: isUser
-                          ? const Radius.circular(0)
-                          : const Radius.circular(16),
-                      bottomLeft: !isUser
-                          ? const Radius.circular(0)
-                          : const Radius.circular(16),
-                    ),
-                  ),
-                  child: Text(
-                    msg['text']!,
-                    style: TextStyle(
-                      color: isUser ? Colors.black : Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
+          child: _messages.isEmpty
+              ? _buildEmptyChat()
+              : ListView.builder(
+                  controller: _scrollController,
+                  padding: const EdgeInsets.all(16),
+                  itemCount: _messages.length,
+                  itemBuilder: (context, index) {
+                    final msg = _messages[index];
+                    final isUser = msg['sender'] == 'user';
+                    final text = msg['text'] ?? '';
+
+                    // Show typing indicator for empty AI message (being generated)
+                    if (!isUser && text.isEmpty && _isGenerating) {
+                      return _buildTypingIndicator();
+                    }
+
+                    return Align(
+                      alignment:
+                          isUser ? Alignment.centerRight : Alignment.centerLeft,
+                      child: Container(
+                        margin: const EdgeInsets.only(bottom: 12),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
+                        constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width * 0.78,
+                        ),
+                        decoration: BoxDecoration(
+                          color: isUser
+                              ? const Color(0xFFFF9500)
+                              : Colors.grey[800],
+                          borderRadius: BorderRadius.circular(16).copyWith(
+                            bottomRight: isUser
+                                ? const Radius.circular(0)
+                                : const Radius.circular(16),
+                            bottomLeft: !isUser
+                                ? const Radius.circular(0)
+                                : const Radius.circular(16),
+                          ),
+                        ),
+                        child: Text(
+                          text,
+                          style: TextStyle(
+                            color: isUser ? Colors.black : Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
         ),
         _buildMessageInput(),
       ],
+    );
+  }
+
+  Widget _buildEmptyChat() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.smart_toy_rounded,
+            size: 64,
+            color: Colors.white.withValues(alpha: 0.2),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'Ask Qwen anything',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.4),
+              fontSize: 18,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Running offline on your device',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.25),
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTypingIndicator() {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        decoration: BoxDecoration(
+          color: Colors.grey[800],
+          borderRadius: BorderRadius.circular(16).copyWith(
+            bottomLeft: const Radius.circular(0),
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _buildDot(0),
+            const SizedBox(width: 4),
+            _buildDot(1),
+            const SizedBox(width: 4),
+            _buildDot(2),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDot(int index) {
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0.3, end: 1.0),
+      duration: Duration(milliseconds: 600 + (index * 200)),
+      builder: (context, value, _) {
+        return Opacity(
+          opacity: value,
+          child: Container(
+            width: 8,
+            height: 8,
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.6),
+              shape: BoxShape.circle,
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -506,8 +744,9 @@ class _QwenScreenState extends State<QwenScreen> {
               child: TextField(
                 controller: _msgController,
                 style: const TextStyle(color: Colors.white),
+                enabled: !_isGenerating,
                 decoration: InputDecoration(
-                  hintText: 'Message Qwen...',
+                  hintText: _isGenerating ? 'Generating...' : 'Message Qwen...',
                   hintStyle: const TextStyle(color: Colors.white54),
                   filled: true,
                   fillColor: Colors.black,
@@ -523,13 +762,14 @@ class _QwenScreenState extends State<QwenScreen> {
             ),
             const SizedBox(width: 12),
             Container(
-              decoration: const BoxDecoration(
-                color: Color(0xFFFF9500),
+              decoration: BoxDecoration(
+                color:
+                    _isGenerating ? Colors.grey[700] : const Color(0xFFFF9500),
                 shape: BoxShape.circle,
               ),
               child: IconButton(
                 icon: const Icon(Icons.send_rounded, color: Colors.black),
-                onPressed: _sendMessage,
+                onPressed: _isGenerating ? null : _sendMessage,
               ),
             ),
           ],
